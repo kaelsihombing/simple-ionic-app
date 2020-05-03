@@ -19,6 +19,15 @@ export class SearchPage implements OnInit {
    ngOnInit() {
    }
 
+   doRefresh(event) {
+      console.log('Begin async operation');
+
+      setTimeout(() => {
+         console.log('Async operation has ended');
+         event.target.complete();
+      }, 2000);
+   }
+
    // searchChanged() {
    //    this.results = this.searchService.searchData(this.searchTerm, this.type);
    //    console.log('My Result: ', this.results);

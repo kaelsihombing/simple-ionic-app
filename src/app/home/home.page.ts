@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { Plugins, CameraResultType, CameraSource } from '@capacitor/core'
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Router, NavigationExtras } from '@angular/router';
 import { Contacts, Contact } from '@ionic-native/contacts/ngx';
 import { Observable } from 'rxjs';
@@ -22,7 +23,16 @@ export class HomePage implements OnInit {
    myContacts: Contact[] = [];
    cardsData = [];
 
-   constructor(private cardsService: CardService, private cardPage: CardPage, private segmentPage: SegmentPage, private sanitizer: DomSanitizer, private router: Router, private contacts: Contacts, private segmentService: SegmentService) { }
+   capturedSnapURL: string;
+   // With Cordova
+   cameraOptions: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+   }
+
+   constructor(private camera: Camera, private cardsService: CardService, private cardPage: CardPage, private segmentPage: SegmentPage, private sanitizer: DomSanitizer, private router: Router, private contacts: Contacts, private segmentService: SegmentService) { }
 
    ngOnInit() {
       this.cardsService.getMyData().subscribe(user => {
@@ -35,20 +45,29 @@ export class HomePage implements OnInit {
       });
    }
    async takePicture() {
-      const image = await Plugins.Camera.getPhoto({
-         quality: 100,
-         allowEditing: true,
-         resultType: CameraResultType.DataUrl,
-         source: CameraSource.Camera
-      })
-      this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl))
-      this.sendPhoto();
+      // const image = await Plugins.Camera.getPhoto({
+      //    quality: 100,
+      //    allowEditing: true,
+      //    resultType: CameraResultType.DataUrl,
+      //    source: CameraSource.Camera
+      // })
+
+      this.camera.getPicture(this.cameraOptions).then((imageData) => {
+         let base64Image = 'data:image/jpeg;base64,' + imageData;
+         this.capturedSnapURL = base64Image;
+         this.sendPhoto();
+      }, (err) => {
+         console.log(err);
+      });
+
+      // this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl))
+      // this.sendPhoto();
    }
 
    sendPhoto() {
       let navigationExtras: NavigationExtras = {
          state: {
-            photo: this.photo
+            photo: this.capturedSnapURL
          }
       }
       this.router.navigate(['home/camera'], navigationExtras)
@@ -70,7 +89,7 @@ export class HomePage implements OnInit {
             }
          }
 
-         this.router.navigate(['contact'], navigationExtras);
+         this.router.navigate(['home/contact'], navigationExtras);
       })
    }
 

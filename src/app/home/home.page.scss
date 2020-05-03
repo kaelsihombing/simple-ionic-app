@@ -3,5 +3,40 @@ $sweet-grey-color: rgb(200, 200, 200);
 $light-grey-color: rgb(233, 233, 233);
 
 div.svg-nav path {
-   fill: $sweet-grey-color;
+   fill: #F2F4F3;
+}
+
+ion-tabs {
+   background-color: rgba(126, 122, 122, 0);
+}
+
+ion-tab-bar {
+   --background: transparent;
+   --ion-color-base: transparent !important;
+   position: absolute;
+   bottom: 0px;
+   width: 90%;
+   left: 18px;
+   margin: auto auto 20px auto;
+   border-radius: 30px;
+   height: 80px;
+
+   ion-tab-button {
+      background-color: rgba(112, 167, 199, 0.822);
+      padding: 0;
+      margin: 0;
+   }
+
+   ion-tab-button:active,
+   ion-tab-button:hover {
+      background-color: rgba(112, 167, 199, 0.945);
+   }
+}
+
+.tabs-inner {
+   position: relative;
+
+   flex: 1;
+
+   contain: layout size style;
 }

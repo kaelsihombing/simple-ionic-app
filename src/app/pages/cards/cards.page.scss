@@ -1,10 +1,21 @@
 ion-header h1 {
-   font-size: 28px;
-   color: rgb(61, 61, 61);
+   font-size: 33px;
+   font-weight: 800;
+   color: rgb(106, 175, 216);
    text-align: center;
 }
 
+div.btn-btn {
+   display: flex;
+   justify-content: center;
+}
 
+ion-button.save,
+ion-button.signout {
+   margin: 10px;
+   --background: rgb(106, 175, 216);
+   --background-activated: rgb(103, 136, 155);
+}
 
 ion-card {
 
@@ -31,7 +42,11 @@ ion-card {
    }
 }
 
-ion-button {
+ion-card.end {
+   margin-bottom: 140px;
+}
+
+ion-button.img-btn {
 
    width: 10rem;
    height: 10rem;

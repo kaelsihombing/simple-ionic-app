@@ -8,13 +8,17 @@ import { SegmentPageRoutingModule } from './segment-routing.module';
 
 import { SegmentPage } from './segment.page';
 
+import { DetailsComponent } from '../../components/details/details.component'
+import { AddCardComponent } from '../../components/add-card/add-card.component'
+
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    SegmentPageRoutingModule
-  ],
-  declarations: [SegmentPage]
+   imports: [
+      CommonModule,
+      FormsModule,
+      IonicModule,
+      SegmentPageRoutingModule
+   ],
+   declarations: [SegmentPage, DetailsComponent, AddCardComponent],
+   entryComponents: [DetailsComponent, AddCardComponent]
 })
-export class SegmentPageModule {}
+export class SegmentPageModule { }

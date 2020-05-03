@@ -5,12 +5,13 @@ import { CommonModule } from '@angular/common';
 import { SlidesComponent } from './slides/slides.component';
 import { LogoComponent } from './logo/logo.component';
 import { StartComponent } from './start/start.component';
+import { PopoverComponent } from './popover/popover.component';
 
 
 
 @NgModule({
-   declarations: [SlidesComponent, LogoComponent, StartComponent],
-   exports: [SlidesComponent, LogoComponent, StartComponent],
+   declarations: [SlidesComponent, LogoComponent, StartComponent, PopoverComponent],
+   exports: [SlidesComponent, LogoComponent, StartComponent, PopoverComponent],
    imports: [
       CommonModule, FormsModule, IonicModule
    ]

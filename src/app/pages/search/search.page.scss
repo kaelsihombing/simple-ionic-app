@@ -1,10 +1,127 @@
-ion-item {
-   height: 80px;
+div.svg-ilustration svg {
+   position: absolute;
+   right: -10px;
+   top: 10px;
+   z-index: 3;
+   width: 250px;
+}
 
-   ion-avatar {
-      min-width: 50px;
-      min-height: 50px;
+div.svg {
 
-      img {}
+   height: 11rem;
+
+   svg {
+      margin-top: 90px;
+      width: 200px;
+      padding-top: 20px;
+      padding-left: 15px;
+   }
+}
+
+
+ion-searchbar {
+   --background: #f4f5f7;
+   --color: rgb(42, 112, 153);
+   --border-radius: 100%;
+}
+
+div.search-bar {
+
+   z-index: 2;
+   width: 100%;
+   display: block;
+   margin-bottom: 10px;
+
+   ion-input {
+      margin: 0px auto;
+      margin: 5px auto;
+      background-color: #f4f5f7;
+      color: #7c7c7c;
+      height: 63px;
+      border-radius: 20px;
+      width: 90%;
+      font-size: 25px;
+
+      ion-icon {
+         padding-left: 5px;
+         margin-right: 10px;
+         color: #b8b8b8;
+         font-size: 44px;
+      }
+   }
+}
+
+ion-list {
+   position: absolute;
+   z-index: 4;
+}
+
+ion-list div {
+   height: 18rem;
+}
+
+ion-list div:nth-child(odd) {
+   position: relative;
+   left: -80px;
+
+   ion-card.card-desc {
+      z-index: 2;
+      height: 90px;
+      top: -135px;
+      left: 90px;
+      width: 46%;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      letter-spacing: 1px;
+
+      h3:nth-child(1) {
+         font-size: 20px;
+         font-weight: 800;
+      }
+
+      h3:nth-child(2) {
+         font-size: 14px;
+         font-weight: 500;
+      }
+   }
+}
+
+ion-list div:nth-child(even) {
+   position: relative;
+   right: -80px;
+
+   ion-card.card-desc {
+      z-index: 2;
+      height: 90px;
+      top: -135px;
+      right: 90px;
+      width: 46%;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      letter-spacing: 1px;
+
+      h3:nth-child(1) {
+         font-size: 20px;
+         font-weight: 800;
+      }
+
+      h3:nth-child(2) {
+         font-size: 14px;
+         font-weight: 500;
+      }
+   }
+}
+
+ion-card.avatar {
+   width: 50%;
+   height: 200px;
+   color: #7c7c7c;
+   margin: 20px auto;
+
+   img {
+      width: 100%;
+      height: 100%;
    }
 }

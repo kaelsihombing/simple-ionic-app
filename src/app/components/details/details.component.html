@@ -1,0 +1,40 @@
+<!-- <ion-header>
+   <ion-toolbar>
+      <ion-button (click)="closeModal()" slot="start">
+         <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+   </ion-toolbar>
+</ion-header> -->
+
+<ion-content padding>
+
+   <ion-card>
+      <div class="image-container">
+         <ion-button (click)="closeModal()" slot="start" fill="">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+         </ion-button>
+         <div class="image-hero">
+            <img src="{{userDetail.image}}" alt="">
+         </div>
+      </div>
+      <div class="ion-card-hero">
+         <div class="left">
+            <ion-text>Fullname </ion-text>
+            <ion-text>Email </ion-text>
+            <ion-text>Job </ion-text>
+            <ion-text>Company </ion-text>
+            <ion-text>Phone </ion-text>
+            <ion-text>Website </ion-text>
+         </div>
+         <div class="right">
+            <ion-text>: <strong>{{userDetail.fullname}}</strong></ion-text>
+            <ion-text>: <strong>{{userDetail.email}}</strong></ion-text>
+            <ion-text>: <strong>{{userDetail.job_title}}</strong></ion-text>
+            <ion-text>: <strong>{{userDetail.company_name}}</strong></ion-text>
+            <ion-text>: <strong>{{userDetail.phone_number}}</strong></ion-text>
+            <ion-text>: <strong>{{userDetail.website}}</strong></ion-text>
+         </div>
+      </div>
+
+   </ion-card>
+</ion-content>

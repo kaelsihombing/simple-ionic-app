@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
 import { SignupService } from './signup.service'
 
 @Component({
@@ -12,7 +12,10 @@ export class SignupPage {
    // isLoading: boolean = false;
 
    model: any = {};
-   constructor(private signupService: SignupService, private router: Router, public alertController: AlertController) { }
+
+   private loading;
+
+   constructor(private loadingController: LoadingController, private signupService: SignupService, private router: Router, public alertController: AlertController) { }
 
    onSignup(signupForm) {
       if (!signupForm.valid) {
@@ -23,19 +26,32 @@ export class SignupPage {
       const email: string = signupForm.value.email;
       const username: string = signupForm.value.username;
       const password: string = signupForm.value.password;
+
+      this.loadingController.create({
+         spinner: "crescent",
+         message: "Sign Up"
+      }).then((overlay) => {
+         this.loading = overlay;
+         this.loading.present();
+      });
+
+      // setTimeout(() => {
       this.signupService
          .signup(email, username, password)
          .subscribe(
             () => {
-               // this.isLoading = false;
                signupForm.reset();
-               this.router.navigate(["/home/search"]);
+               this.router.navigate(["/home/cards"]);
+               this.loading.dismiss();
             },
             error => {
                // this.isLoading = false;
                alert(error.error.error.message);
             }
          );
+      // }, 3000)
+
+
    }
 
    async presentAlert() {

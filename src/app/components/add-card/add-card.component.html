@@ -1,0 +1,44 @@
+<ion-card>
+   <ion-button (click)="closeModal()" slot="start" fill="">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+   </ion-button>
+
+   <form>
+      <ion-item>
+         <ion-label position="floating">Email</ion-label>
+         <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label position="floating">Fullname</ion-label>
+         <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label position="floating">Job</ion-label>
+         <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label position="floating">Company</ion-label>
+         <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label position="floating">Website</ion-label>
+         <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label position="floating">Phone</ion-label>
+         <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label position="floating">Address</ion-label>
+         <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label position="floating">Relation</ion-label>
+         <ion-input></ion-input>
+      </ion-item>
+   </form>
+
+</ion-card>
+
+<ion-button ionBlur expand="full">Add</ion-button>
+<ion-button ionBlur (click)="closeModal()" expand="full">Back</ion-button>

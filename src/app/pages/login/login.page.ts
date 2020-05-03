@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LoginService } from "./login.service";
 import { Router } from "@angular/router";
-import { AlertController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
    selector: 'app-login',
@@ -13,7 +13,9 @@ export class LoginPage {
 
    model: any = {};
 
-   constructor(private loginService: LoginService, private router: Router, public alertController: AlertController) { }
+   private loading;
+
+   constructor(private loadingController: LoadingController, private loginService: LoginService, private router: Router, public alertController: AlertController) { }
 
    ngOnInit() {
    }
@@ -26,17 +28,44 @@ export class LoginPage {
       const username: string = loginForm.value.username;
       const password: string = loginForm.value.password;
 
+      this.loadingController.create({
+         spinner: "crescent",
+         message: "Sign In"
+      }).then((overlay) => {
+         this.loading = overlay;
+         this.loading.present();
+      });
+
+      // setTimeout(() => {
       this.loginService.signin(username, password).subscribe(
          res => {
             console.log(res)
             loginForm.reset();
-            this.router.navigate(["/home/search"])
+            this.router.navigate(["/home/cards"])
+            this.loading.dismiss();
          },
          error => {
             console.log(error)
             this.presentAlert();
          }
       )
+      // }, 1000)
+
+      // this.loginService.signin(username, password).subscribe(
+      //    res => {
+
+      //       setTimeout(() => {
+      //          this.loading.dismiss();
+      //          console.log(res)
+      //          loginForm.reset();
+      //          this.router.navigate(["/home/search"])
+      //       }, 3000)
+      //    },
+      //    error => {
+      //       console.log(error)
+      //       this.presentAlert();
+      //    }
+      // )
    }
 
    async presentAlert() {

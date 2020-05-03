@@ -1,5 +1,5 @@
 <ion-header no-header>
-   <ion-segment mod="md" [(ngModel)]="segment" (click)="slideChanged(slides)" (click)="segmentChanged()"
+   <ion-segment [(ngModel)]="segment" (click)="slideChanged(slides)" (click)="segmentChanged()"
       (click)="getCardsData()">
       <ion-segment-button value="0">
          <ion-icon name="git-network"></ion-icon>
@@ -17,11 +17,22 @@
 </ion-header>
 
 <ion-content>
+
+   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+   </ion-refresher>
+
+   <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="openModal()">
+         <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+   </ion-fab>
+
    <ion-slides #slides pager="false" [options]="sliderOptions" (ionSlideDidChange)="slideChanged(slides)"
       (ionSlideDidLoad)="slideChanged(slides)">
       <ion-slide>
          <ion-list>
-            <ion-card button *ngFor="let item of filteredWorks">
+            <ion-card button (click)="openModalPassData()" *ngFor="let item of filteredWorks">
                <div class="left">
                   <div class="image">
                      <img src={{item.image}} alt="">
@@ -50,7 +61,7 @@
       </ion-slide>
       <ion-slide>
          <ion-list>
-            <ion-card button *ngFor="let item of filteredFamily">
+            <ion-card button (click)="openModalPassData()" *ngFor="let item of filteredFamily">
                <div class="left">
                   <div class="image">
                      <img src={{item.image}} alt="">
@@ -79,7 +90,7 @@
       </ion-slide>
       <ion-slide>
          <ion-list>
-            <ion-card button *ngFor="let item of filteredFriend">
+            <ion-card button (click)="openModalPassData()" *ngFor="let item of filteredFriend">
                <div class="left">
                   <div class="image">
                      <img src={{item.image}} alt="">

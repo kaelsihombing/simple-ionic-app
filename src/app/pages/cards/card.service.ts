@@ -26,6 +26,19 @@ export class CardService {
          )
    }
 
+   updateData(newUserData): Observable<any> {
+      console.log("UPDATING DATA.....", newUserData)
+
+      var authHeader = this.addAuthHead();
+
+      return this.http.put<any>(this.baseUrl + '/users', newUserData, { headers: authHeader })
+         .pipe(
+            tap(result => {
+               return result
+            })
+         )
+   }
+
    addAuthHead() {
       let authToken = JSON.parse(localStorage.getItem('userData'))._token;
 
@@ -33,6 +46,8 @@ export class CardService {
 
       return headers;
    }
+
+
 
    // getDetails(id) {
    //    return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.apiKey}`)

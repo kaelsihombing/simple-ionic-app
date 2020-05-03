@@ -15,22 +15,22 @@ export class ContactPage {
    constructor(private contacts: Contacts, private callNumber: CallNumber, private sms: SMS, private toastCtrl: ToastController) { }
 
 
-   // loadContacts() {
+   loadContacts() {
 
-   //    let options = {
-   //       filter: '',
-   //       multiple: true,
-   //       hasPhoneNumber: true
-   //    }
+      let options = {
+         filter: '',
+         multiple: true,
+         hasPhoneNumber: true
+      }
 
-   //    this.contacts.find(['*'], options).then((contacts: Contact[]) => {
-   //       this.myContacts = contacts;
-   //       console.log('Contact: ', contacts)
-   //    })
-   // }
+      this.contacts.find(['*'], options).then((contacts: Contact[]) => {
+         this.myContacts = contacts;
+         console.log('Contact: ', contacts)
+      })
+   }
 
    sendSms(contact: Contact) {
-      this.sms.send(contact.phoneNumbers[0].value, 'This is a message for you');
+      this.sms.send(contact.phoneNumbers[0].value, 'Hi, This is a message from Cloud Ace Singapore');
    }
 
    call(contact: Contact) {
@@ -53,4 +53,14 @@ export class ContactPage {
    //       (error: any) => console.log('Error saving contact.', error)
    //    );
    // }
+
+   doRefresh(event) {
+      console.log('Begin async operation');
+
+      setTimeout(() => {
+         console.log('Async operation has ended');
+         event.target.complete();
+      }, 2000);
+   }
+
 }
