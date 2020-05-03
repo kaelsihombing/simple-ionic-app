@@ -1,0 +1,47 @@
+ion-header h1 {
+   font-size: 28px;
+   color: rgb(61, 61, 61);
+   text-align: center;
+}
+
+
+
+ion-card {
+
+   height: 80px;
+
+   ion-label {
+      font-size: 20px;
+      font-weight: 600;
+      padding: 0;
+      margin: 0;
+   }
+
+   ion-item {
+      font-size: 15px;
+      color: rgb(61, 61, 61);
+
+      ion-label {
+         color: rgb(173, 173, 173);
+      }
+   }
+
+   ion-item:nth-child(2) {
+      top: -10px;
+   }
+}
+
+ion-button {
+
+   width: 10rem;
+   height: 10rem;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+
+   img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+   }
+}

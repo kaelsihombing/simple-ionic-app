@@ -1,0 +1,155 @@
+<ion-content>
+
+</ion-content>
+
+
+
+<ion-tabs>
+
+   <ion-tab-bar slot="bottom" class="tabs-bar">
+      <ion-tab-button tab="search">
+         <div class="svg-nav">
+            <svg width="40" height="38" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g filter="url(#filter0_d)">
+                  <path
+                     d="M35.4895 16.0951L21.5762 3.4174C20.9655 2.86085 20.0446 2.86091 19.4341 3.41734L5.52076 16.0952C5.03156 16.5409 4.86997 17.2278 5.10896 17.8449C5.34802 18.462 5.93007 18.8607 6.59188 18.8607H8.81408V31.5628C8.81408 32.0665 9.22242 32.4748 9.72603 32.4748H17.3522C17.8559 32.4748 18.2642 32.0665 18.2642 31.5628V23.8505H22.7463V31.5629C22.7463 32.0665 23.1546 32.4749 23.6582 32.4749H31.2841C31.7877 32.4749 32.196 32.0666 32.196 31.5629V18.8607H34.4186C35.0804 18.8607 35.6625 18.4619 35.9016 17.8449C36.1402 17.2277 35.9787 16.5409 35.4895 16.0951Z"
+                     fill="white" />
+                  <path
+                     d="M31.9578 4.82031H25.8333L32.8698 11.2183V5.73221C32.8698 5.22859 32.4615 4.82031 31.9578 4.82031Z"
+                     fill="white" />
+               </g>
+               <defs>
+                  <filter id="filter0_d" x="0" y="0" width="39.0103" height="37.4749" filterUnits="userSpaceOnUse"
+                     color-interpolation-filters="sRGB">
+                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                     <feOffset dx="-1" dy="1" />
+                     <feGaussianBlur stdDeviation="2" />
+                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                  </filter>
+               </defs>
+            </svg>
+
+         </div>
+         <!-- <ion-label>Home</ion-label> -->
+      </ion-tab-button>
+
+      <ion-tab-button tab="segment" (click)="getCardsData()">
+         <div class="svg-nav">
+            <svg width="33" height="36" viewBox="0 0 33 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g filter="url(#filter0_d)">
+                  <path
+                     d="M11.2642 10.3952V11.1855C11.2642 12.4308 10.2426 13.4435 8.98633 13.4435H7.2779C6.02164 13.4435 5 12.4308 5 11.1855V10.3952C5 9.14984 6.02164 8.1371 7.2779 8.1371H8.98633C10.2426 8.1371 11.2642 9.14984 11.2642 10.3952ZM8.98633 20.5565H7.2779C6.02164 20.5565 5 21.5692 5 22.8145V23.6048C5 24.8502 6.02164 25.8629 7.2779 25.8629H8.98633C10.2426 25.8629 11.2642 24.8502 11.2642 23.6048V22.8145C11.2642 21.5692 10.2426 20.5565 8.98633 20.5565ZM30 5.70968V28.2903C30 29.7869 28.7762 31 27.2665 31H9.95444C8.44476 31 7.22096 29.7869 7.22096 28.2903V27.5943C7.22096 27.0954 7.62893 26.691 8.13212 26.691H9.25285C10.9038 26.691 12.242 25.3644 12.242 23.7279V22.6915C12.242 21.0549 10.9038 19.7283 9.25285 19.7283H8.13212C7.62893 19.7283 7.22096 19.3239 7.22096 18.8251V15.1749C7.22096 14.6761 7.62893 14.2717 8.13212 14.2717H9.25285C10.9038 14.2717 12.242 12.945 12.242 11.3085V10.2721C12.242 8.63557 10.9038 7.30895 9.25285 7.30895H8.13212C7.62893 7.30895 7.22096 6.90459 7.22096 6.40573V5.70968C7.22096 4.21315 8.44476 3 9.95444 3H27.2665C28.7762 3 30 4.21315 30 5.70968ZM16.6439 13.3018C16.6439 15.4899 18.4396 17.27 20.6469 17.27C22.8542 17.27 24.6499 15.4899 24.6499 13.3018C24.6499 11.1137 22.8542 9.33364 20.6469 9.33364C18.4396 9.33364 16.6439 11.1137 16.6439 13.3018ZM26.8394 21.4224C26.8394 20.4565 26.2648 19.5781 25.3753 19.1841C23.133 18.1918 23.1917 18.1883 22.9311 18.1883H18.3331C18.0744 18.1883 18.136 18.1897 15.889 19.1841C14.9994 19.5781 14.4248 20.4565 14.4248 21.4224V23.1984C14.4248 23.6974 14.8326 24.1016 15.336 24.1016H25.9282C26.4317 24.1016 26.8394 23.6974 26.8394 23.1984V21.4224Z"
+                     fill="white" />
+               </g>
+               <defs>
+                  <filter id="filter0_d" x="0" y="0" width="33" height="36" filterUnits="userSpaceOnUse"
+                     color-interpolation-filters="sRGB">
+                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                     <feOffset dx="-1" dy="1" />
+                     <feGaussianBlur stdDeviation="2" />
+                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                  </filter>
+               </defs>
+            </svg>
+
+         </div>
+         <!-- <ion-label>Segments</ion-label> -->
+      </ion-tab-button>
+
+      <ion-tab-button tab="" (click)="takePicture()">
+         <div class="svg-nav">
+            <svg width="34" height="31" viewBox="0 0 34 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g filter="url(#filter0_d)">
+                  <path
+                     d="M20.116 12.6732C21.3701 13.9146 21.3701 15.9274 20.116 17.1689C18.8618 18.4103 16.8284 18.4103 15.5743 17.1689C14.3201 15.9274 14.3201 13.9146 15.5743 12.6732C16.8284 11.4317 18.8618 11.4317 20.116 12.6732Z"
+                     fill="white" />
+                  <path
+                     d="M27.4795 6.17895H25.2606L23.6541 3H12.0353L10.4303 6.18052L8.21458 6.18442C6.44813 6.18755 5.01015 7.61247 5.00863 9.36181L5 22.0729C5 23.8261 6.4403 25.2526 8.21148 25.2526H27.4795C29.2507 25.2526 30.691 23.8269 30.691 22.0737V9.35786C30.6909 7.60467 29.2506 6.17895 27.4795 6.17895ZM17.8451 21.2789C14.3035 21.2789 11.4221 18.4267 11.4221 14.921C11.4221 11.4153 14.3035 8.56311 17.8451 8.56311C21.3866 8.56311 24.268 11.4153 24.268 14.921C24.268 18.4267 21.3866 21.2789 17.8451 21.2789Z"
+                     fill="white" />
+               </g>
+               <defs>
+                  <filter id="filter0_d" x="0" y="0" width="33.691" height="30.2526" filterUnits="userSpaceOnUse"
+                     color-interpolation-filters="sRGB">
+                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                     <feOffset dx="-1" dy="1" />
+                     <feGaussianBlur stdDeviation="2" />
+                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                  </filter>
+               </defs>
+            </svg>
+
+         </div>
+         <!-- <ion-label>Camera</ion-label> -->
+      </ion-tab-button>
+
+      <ion-tab-button tab="contact" (click)="loadContacts()">
+         <div class="svg-nav">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g filter="url(#filter0_d)">
+                  <path
+                     d="M30.2651 22.0814L26.6367 18.453C25.3408 17.1572 23.1379 17.6755 22.6195 19.3601C22.2308 20.5264 20.9349 21.1743 19.7687 20.9151C17.177 20.2672 13.6782 16.898 13.0303 14.1767C12.6415 13.0104 13.419 11.7145 14.5853 11.3258C16.2699 10.8075 16.7882 8.60455 15.4924 7.3087L11.864 3.68032C10.8273 2.77323 9.2723 2.77323 8.3652 3.68032L5.90309 6.14244C3.44097 8.73414 6.16226 15.6021 12.2527 21.6926C18.3432 27.7831 25.2112 30.634 27.8029 28.0423L30.2651 25.5802C31.1722 24.5435 31.1722 22.9885 30.2651 22.0814Z"
+                     fill="white" />
+               </g>
+               <defs>
+                  <filter id="filter0_d" x="0" y="0" width="33.9454" height="34" filterUnits="userSpaceOnUse"
+                     color-interpolation-filters="sRGB">
+                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                     <feOffset dx="-1" dy="1" />
+                     <feGaussianBlur stdDeviation="2" />
+                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                  </filter>
+               </defs>
+            </svg>
+
+         </div>
+         <!-- <ion-label>Name Cards</ion-label> -->
+      </ion-tab-button>
+
+      <ion-tab-button tab="cards">
+         <div class="svg-nav">
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g filter="url(#filter0_d)">
+                  <g clip-path="url(#clip0)">
+                     <path
+                        d="M19.7862 23.4511C21.7715 23.4511 23.4907 22.739 24.8953 21.3342C26.3 19.9295 27.012 18.2109 27.012 16.2253C27.012 14.2405 26.3 12.5216 24.8951 11.1165C23.4902 9.71205 21.7713 9 19.7862 9C17.8007 9 16.082 9.71205 14.6774 11.1167C13.2727 12.5213 12.5604 14.2402 12.5604 16.2253C12.5604 18.2109 13.2727 19.9298 14.6776 21.3344C16.0825 22.7388 17.8014 23.4511 19.7862 23.4511Z"
+                        fill="white" />
+                     <path
+                        d="M32.4294 32.0685C32.3889 31.4839 32.307 30.8463 32.1864 30.1729C32.0646 29.4945 31.9078 28.8532 31.7201 28.267C31.5263 27.6612 31.2626 27.0629 30.9367 26.4895C30.5984 25.8944 30.201 25.3762 29.7552 24.9498C29.2889 24.5037 28.7181 24.1451 28.058 23.8835C27.4002 23.6232 26.6712 23.4914 25.8914 23.4914C25.5852 23.4914 25.289 23.6171 24.717 23.9895C24.365 24.219 23.9532 24.4845 23.4937 24.7782C23.1007 25.0286 22.5683 25.2632 21.9107 25.4756C21.2692 25.6832 20.6178 25.7885 19.9748 25.7885C19.3319 25.7885 18.6807 25.6832 18.0385 25.4756C17.3816 25.2634 16.8492 25.0288 16.4567 24.7784C16.0014 24.4875 15.5894 24.222 15.2322 23.9892C14.6609 23.6168 14.3645 23.4912 14.0582 23.4912C13.2782 23.4912 12.5494 23.6232 11.8919 23.8837C11.2322 24.1449 10.6612 24.5035 10.1945 24.9501C9.74884 25.3767 9.35127 25.8947 9.01344 26.4895C8.68774 27.0629 8.42407 27.6609 8.22998 28.2672C8.04253 28.8534 7.88574 29.4945 7.76398 30.1729C7.64336 30.8454 7.56142 31.4832 7.5209 32.0692C7.48108 32.6432 7.46094 33.239 7.46094 33.8407C7.46094 35.4067 7.95876 36.6745 8.94043 37.6095C9.90997 38.5321 11.1929 39.0002 12.7529 39.0002H27.1981C28.7582 39.0002 30.0406 38.5323 31.0104 37.6095C31.9923 36.6752 32.4901 35.4072 32.4901 33.8405C32.4899 33.236 32.4695 32.6398 32.4294 32.0685Z"
+                        fill="white" />
+                  </g>
+               </g>
+               <defs>
+                  <filter id="filter0_d" x="0" y="0" width="38" height="38" filterUnits="userSpaceOnUse"
+                     color-interpolation-filters="sRGB">
+                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                     <feOffset dx="-1" dy="1" />
+                     <feGaussianBlur stdDeviation="2" />
+                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                  </filter>
+                  <clipPath id="clip0">
+                     <rect x="5" y="3" width="30" height="30" fill="white" />
+                  </clipPath>
+               </defs>
+            </svg>
+
+         </div>
+         <!-- <ion-label>Contacts</ion-label> -->
+      </ion-tab-button>
+   </ion-tab-bar>
+
+</ion-tabs>

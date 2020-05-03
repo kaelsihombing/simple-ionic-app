@@ -1,0 +1,24 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title>Home</ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-searchbar autocomplete="on" [(ngModel)]="searchTerm" (ionChange)="searchChanged($event)"></ion-searchbar>
+
+   <ion-list>
+      <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'github', item.items]">
+
+         <ion-avatar slot="start">
+            <img [src]="item.avatar_url" *ngIf="item.avatar_url != 'N/A'">
+         </ion-avatar>
+
+         <ion-label text-wrap>
+            <h3>{{item.login}}</h3>
+            <h3>id: {{item.id}}</h3>
+         </ion-label>
+
+      </ion-item>
+   </ion-list>
+</ion-content>

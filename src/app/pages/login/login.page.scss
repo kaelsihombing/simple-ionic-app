@@ -1,0 +1,71 @@
+* {
+   overflow: hidden;
+}
+
+div.background {
+   width: 40rem;
+   height: 35vh;
+   background-color: var(--ion-color-mycolor);
+   position: absolute;
+   z-index: 1;
+}
+
+div.header {
+   margin-top: 70px;
+   display: flex;
+   justify-content: center;
+   position: relative;
+   z-index: 3;
+
+
+   div.svg-login-logo {
+      width: 18rem;
+      height: 40vh;
+      display: block;
+      justify-content: center;
+
+      svg#login-logo {
+         padding-top: 60px;
+         width: 15rem;
+      }
+   }
+}
+
+ion-content {
+   div.form {
+      padding: 0px 40px 0px 20px;
+      height: 80vh;
+      // margin-top: 10px;
+
+      div.link {
+
+         width: 100%;
+         margin: 15px auto auto 20px;
+
+         a {}
+      }
+
+      div.button-section {
+         margin-top: 40px;
+
+         button {
+            float: right;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--ion-color-mycolor);
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+         }
+      }
+
+      span {
+         margin-left: 20px;
+         font-size: 12px;
+         color: red;
+      }
+
+
+   }
+}

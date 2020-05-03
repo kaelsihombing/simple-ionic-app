@@ -1,0 +1,110 @@
+<ion-header no-header>
+   <ion-segment mod="md" [(ngModel)]="segment" (click)="slideChanged(slides)" (click)="segmentChanged()"
+      (click)="getCardsData()">
+      <ion-segment-button value="0">
+         <ion-icon name="git-network"></ion-icon>
+         Works
+      </ion-segment-button>
+      <ion-segment-button value="1">
+         <ion-icon name="heart"></ion-icon>
+         Family
+      </ion-segment-button>
+      <ion-segment-button value="2">
+         <ion-icon name="people"></ion-icon>
+         Friends
+      </ion-segment-button>
+   </ion-segment>
+</ion-header>
+
+<ion-content>
+   <ion-slides #slides pager="false" [options]="sliderOptions" (ionSlideDidChange)="slideChanged(slides)"
+      (ionSlideDidLoad)="slideChanged(slides)">
+      <ion-slide>
+         <ion-list>
+            <ion-card button *ngFor="let item of filteredWorks">
+               <div class="left">
+                  <div class="image">
+                     <img src={{item.image}} alt="">
+                  </div>
+               </div>
+               <div class="right">
+                  <div class="right-head">
+                     <div class="name">
+                        {{item.fullname.toUpperCase()}}
+                     </div>
+                  </div>
+                  <div class="right-bottom">
+                     <div class="email">
+                        {{item.email}}
+                     </div>
+                     <div class="job">
+                        {{item.job_title}}
+                     </div>
+                     <div class="address">
+                        {{item.address}}
+                     </div>
+                  </div>
+               </div>
+            </ion-card>
+         </ion-list>
+      </ion-slide>
+      <ion-slide>
+         <ion-list>
+            <ion-card button *ngFor="let item of filteredFamily">
+               <div class="left">
+                  <div class="image">
+                     <img src={{item.image}} alt="">
+                  </div>
+               </div>
+               <div class="right">
+                  <div class="right-head">
+                     <div class="name">
+                        {{item.fullname.toUpperCase()}}
+                     </div>
+                  </div>
+                  <div class="right-bottom">
+                     <div class="email">
+                        {{item.email}}
+                     </div>
+                     <div class="job">
+                        {{item.job_title}}
+                     </div>
+                     <div class="address">
+                        {{item.address}}
+                     </div>
+                  </div>
+               </div>
+            </ion-card>
+         </ion-list>
+      </ion-slide>
+      <ion-slide>
+         <ion-list>
+            <ion-card button *ngFor="let item of filteredFriend">
+               <div class="left">
+                  <div class="image">
+                     <img src={{item.image}} alt="">
+                  </div>
+               </div>
+               <div class="right">
+                  <div class="right-head">
+                     <div class="name">
+                        {{item.fullname.toUpperCase()}}
+                     </div>
+                  </div>
+                  <div class="right-bottom">
+                     <div class="email">
+                        {{item.email}}
+                     </div>
+                     <div class="job">
+                        {{item.job_title}}
+                     </div>
+                     <div class="address">
+                        {{item.address}}
+                     </div>
+                  </div>
+               </div>
+            </ion-card>
+         </ion-list>
+      </ion-slide>
+   </ion-slides>
+</ion-content>

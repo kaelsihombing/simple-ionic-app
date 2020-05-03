@@ -1,0 +1,15 @@
+$main-color: #70A7C7;
+$sweet-grey-color: rgb(200, 200, 200);
+
+div.button {
+   margin-top: 40px;
+   display: flex;
+   justify-content: center;
+
+   ion-button {
+      --background: #70A7C7;
+      width: 90px;
+      --border-radius: 50px;
+      letter-spacing: 2px;
+   }
+}

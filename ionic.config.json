@@ -1,0 +1,8 @@
+{
+  "name": "cloud-ace-assignment",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
