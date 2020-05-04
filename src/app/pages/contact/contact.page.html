@@ -1,17 +1,9 @@
-<ion-header>
-   <ion-toolbar>
-      <ion-title>contact</ion-title>
-   </ion-toolbar>
-</ion-header>
-
+<!-- 
 <ion-content>
 
    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
    </ion-refresher>
-
-   <!-- <ion-button (click)="loadContacts()" expand="full">Contacts</ion-button> -->
-   <!-- <ion-button (click)="createContact()" expand="full">Create Contact</ion-button> -->
 
    <ion-list>
       <ion-item-sliding *ngFor="let c of myContacts">
@@ -36,4 +28,21 @@
    </ion-list>
 
 
+</ion-content> -->
+
+<ion-header>
+   <ion-toolbar>
+      <ion-searchbar (keyup)="onKeyUp($event)"></ion-searchbar>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-list>
+      <ion-item *ngFor="let contact of contactsFound">
+         <h2>{{contact?.displayName}}</h2>
+         <p *ngFor="let num of contact?.phoneNumbers">
+            {{num.value}}
+         </p>
+      </ion-item>
+   </ion-list>
 </ion-content>

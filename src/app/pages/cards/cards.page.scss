@@ -42,8 +42,14 @@ ion-card {
    }
 }
 
-ion-card.end {
+div.btn-save {
+   display: flex;
+   width: 100%;
    margin-bottom: 140px;
+
+   ion-button.save {
+      margin: 0px auto;
+   }
 }
 
 ion-button.img-btn {

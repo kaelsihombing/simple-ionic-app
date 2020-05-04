@@ -12,8 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { Camera } from '@ionic-native/camera/ngx';
 import { Contacts } from '@ionic-native/contacts/ngx';
-import { CallNumber } from '@ionic-native/call-number/ngx';
-import { SMS } from '@ionic-native/sms/ngx';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -24,10 +22,8 @@ import { FormsModule } from '@angular/forms';
       Camera,
       StatusBar,
       SplashScreen,
-      { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
       Contacts,
-      CallNumber,
-      SMS
+      { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
    ],
    bootstrap: [AppComponent]
 })
